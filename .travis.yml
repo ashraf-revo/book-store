@@ -1,0 +1,12 @@
+language: java
+jdk:
+  - openjdk11
+services:
+  - docker
+before_install:
+  - chmod +x mvnw
+install: true
+script: ./mvnw clean test compile assembly:single
+cache:
+  directories:
+    - $HOME/.m2
